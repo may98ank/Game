@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+    <head>
     <script src="phaser.js"></script>
 
     <style>
@@ -98,6 +97,7 @@
         function update() {
             // player.x = game.input.x;
             // player.y = game.input.y;
+            
 
             game.physics.arcade.overlap(player, coins, handler, processer, this);
             game.physics.arcade.overlap(bullets, coins, bullet_check, bullet_process, this);
@@ -167,6 +167,7 @@
         }
 
         function bullet_process(b, c){
+            score++;
             score++;
             c.x = game.rnd.between(0, window.innerWidth);
             c.y = game.rnd.between(0, window.innerHeight);
